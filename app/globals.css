@@ -2,32 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.hoverUnderline {
+  display: inline-block;
+  position: relative;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.hoverUnderline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -0.5rem;
+  left: 0;
+  background-color: #00b24f;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.hoverUnderline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hoverUnderlineWhite {
+  display: inline-block;
+  position: relative;
+}
+
+.hoverUnderlineWhite::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -0.5rem;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+.hoverUnderlineWhite:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.subscribe-bg {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.join-bg {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
