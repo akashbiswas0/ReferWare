@@ -1,38 +1,20 @@
 // @ts-nocheck
-import {
-    useBrandData,
-    usePublicKey,
-    useInfluencerData,
-    useIsInfluencer,
-} from "@/store";
+import appwriteService from "@/appwrite/config";
+import { useBrandData, useInfluencerData, useIsInfluencer } from "@/store";
 
-import appwriteService from "./appwrite/config";
+export const useUserActions = () => {
+  async function createUser(key: string) {
+    const user = await appwriteService.createUserAccount(key);
+  }
 
-export async function checkUserExist(key: string) {
+  async function checkUserExist(key: string) {
     console.log("checking if user exists otherwise registering new user");
     try {
-      try {
-        const data = await appwriteService.getCurrentUser().then();
-  
-        console.log(data);
-        //sendEmail("b8@bareed.ws", "Login Alert", "New Login Location detected");
-        return data;
-      } catch (error) {
-        console.log("error getting user", error);
-      }
-      try {
-        const res = await appwriteService.login(key);
-  
-        console.log("login response is ", res);
-        const data = await appwriteService.getCurrentUser().then();
-        console.log(data);
-        sendEmail(data?.$id, "Login Alert", "New Login Location detected");
-        return data;
-      } catch (error) {
-        console.log("error logging in ", error);
-      }
+      const data = await appwriteService.getCurrentUser().then();
+      console.log(data);
+      return data;
     } catch (error) {
-      console.log("session creation failed", error);
+      console.log("error logong in ", error);
     }
     try {
       const data = await createUser(key);
@@ -42,9 +24,19 @@ export async function checkUserExist(key: string) {
     } catch (error) {
       console.log("error creating user", error);
     }
-}
+  }
 
-export async function checkUserSetup(key: string) {
+  async function getInfluencerData(key: string) {
+    const data = await appwriteService.getInfluencerData(key);
+    return data;
+  }
+
+  async function getBrandData(key: string) {
+    const data = await appwriteService.getBrandData(key);
+    return data;
+  }
+
+  async function checkUserSetup(key: string) {
     const brandData = await appwriteService.getBrandData(key);
     if (brandData.total) {
       console.log("brand data", brandData);
@@ -65,10 +57,9 @@ export async function checkUserSetup(key: string) {
         industry: brandData.documents[0].industry,
         profile_img: brandData.documents[0].profile_img,
         connections: brandData.documents[0].connections,
-        publicKey: brandData.documents[0].publicKey,
       });
     }
-  
+
     const influencerData = await getInfluencerData(key);
     if (influencerData.total) {
       console.log(influencerData);
@@ -85,27 +76,16 @@ export async function checkUserSetup(key: string) {
         main_platform: influencerData.documents[0].main_platform,
         follower_count: influencerData.documents[0].follower_count,
         connections: influencerData.documents[0].connections,
-        publicKey: influencerData.documents[0].publicKey,
-        profile_img: influencerData?.documents[0].profile_img,
       });
     }
-  
+
     if (brandData.total || influencerData.total) {
       return true;
     }
-}
+  }
 
-export async function sendEmail(id: string, subject: string, content: string) {
-    try {
-      const response = await fetch("/api/welcomeMail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id, subject, content }),
-      });
-      console.log(response);
-    } catch (error) {
-      console.log("error sending email", error);
-    }
-}
+  return {
+    checkUserExist,
+    checkUserSetup,
+  };
+};
