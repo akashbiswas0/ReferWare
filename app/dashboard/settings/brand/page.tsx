@@ -1,5 +1,5 @@
 "use client";
-import SettingsNavBar from "@/components/dashboard/settings/SettingsNavBar";
+import SettingsNavBar from "@/components/dashboard/settings/SettingsNavbar";
 import AccountSetting from "@/components/dashboard/settings/AccountSetting";
 import ProfileSetting from "@/components/dashboard/settings/ProfileSetting";
 import PaymentSetting from "@/components/dashboard/settings/PaymentSetting";
