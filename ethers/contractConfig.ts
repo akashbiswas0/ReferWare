@@ -1,7 +1,38 @@
 // @ts-nocheck
-
+export const counterContractAddress =
+  "0x77929F1f2a404a6dEB38124E0E0c4d7F5500c595"; // Your smart contract address
+export const counterContractAbi = [
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "num",
+        type: "uint256",
+      },
+    ],
+    name: "store",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "retrieve",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+];
+//pa 0xCFeC6fC50cce2baf56FEb2A19bBBeCCE6BDb7416
+// as 0xA0806AF1533246BA9Db92F2CfAd3b013251F94C5
 export const tokenContractAddress =
-  "0xBD9406d1338c8a670041722A2c77ff278E1h68E1";
+  "0x45FeA5CA4306403CA3337394e140783102142B51";
 export const tokenContractAbi = [
   {
     inputs: [],
@@ -330,9 +361,10 @@ export const tokenContractAbi = [
     type: "function",
   },
 ];
-
+// pa 0xce76F502cE90fdb53983134f23EF3228777747D1
+// as 0x9Dde0dbD80114F5912eb7A6147253C091E404864
 export const referFactoryContractAddress =
-  "0x307A8eeb569A13acabf52h7544F401e4719729D6";
+  "0x57150434649A55b04819691bBEDEBB5A254C4bAA";
 export const referFactoryContractAbi = [
   {
     inputs: [],

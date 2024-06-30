@@ -94,7 +94,18 @@ export class AppwriteService {
     }
   }
 
-
+  async createChat(message: any) {
+    try {
+      return database.createDocument(
+        conf.appwriteDatabaseId,
+        conf.appwriteChatId,
+        ID.unique(),
+        message
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   async getBrandData(key: string) {
     try {
@@ -131,7 +142,17 @@ export class AppwriteService {
     }
   }
 
-
+  async getMessages(roomID: string) {
+    try {
+      return database.listDocuments(
+        conf.appwriteDatabaseId,
+        conf.appwriteChatId,
+        [Query.equal("room", roomID)]
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   async logout() {
     try {
@@ -163,7 +184,31 @@ export class AppwriteService {
     }
   }
 
+  async updateBrandConnection(collectionID: string, connections: string) {
+    try {
+      return database.updateDocument(
+        conf.appwriteDatabaseId,
 
+        conf.appwriteBrandId,
+        collectionID,
+        { connections }
+      );
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  async updateInfluencerConnection(collectionID: string, connections: string) {
+    try {
+      return database.updateDocument(
+        conf.appwriteDatabaseId,
+        conf.appwriteInfluencerId,
+        collectionID,
+        { connections }
+      );
+    } catch (e) {
+      console.error(e);
+    }
+  }
 
   async updateBrandData(
     collectionID: string,
