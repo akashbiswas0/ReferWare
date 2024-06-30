@@ -1,16 +1,15 @@
 "use client";
-import SettingsNavBar from "@/components/dashboard/settings/SettingsNavBar";
-import AccountSetting from "@/components/dashboard/settings/AccountSetting";
-import ProfileSetting from "@/components/dashboard/settings/ProfileSetting";
-import PaymentSetting from "@/components/dashboard/settings/PaymentSetting";
-import NotificationSetting from "@/components/dashboard/settings/NotificationSetting";
 import React, { useState } from "react";
+import InfluencersNavbar from "@/components/dashboard/settings/influencers/InfluencersNavbar";
+import InfAccountSettings from "@/components/dashboard/settings/influencers/InfAccountSettings";
+import InfProfileSettings from "@/components/dashboard/settings/influencers/InfProfileSettings";
+import InfPaymentSettings from "@/components/dashboard/settings/influencers/InfPaymentSettings";
+import InfNotificationSettings from "@/components/dashboard/settings/influencers/InfNotificationSettings";
+import ReferalCode from "@/components/dashboard/ReferalCode";
 import Image from "next/image";
 import Link from "next/link";
 
-
-function BrandSettings() {
-
+function InfluencerSettings() {
   const [activePage, setActivePage] = useState("ProfilePage");
   return (
     <Layout>
@@ -22,16 +21,16 @@ function BrandSettings() {
 
   function RenderPage() {
     if (activePage == "AccountPage") {
-      return <AccountSetting />;
+      return <InfAccountSettings />;
     }
     if (activePage == "ProfilePage") {
-      return <ProfileSetting />;
+      return <InfProfileSettings />;
     }
     if (activePage == "PaymentPage") {
-      return <PaymentSetting />;
+      return <InfPaymentSettings />;
     }
     if (activePage == "NotificationPage") {
-      return <NotificationSetting />;
+      return <InfNotificationSettings />;
     }
   }
 
@@ -50,8 +49,10 @@ function BrandSettings() {
           </Link>
         </div>
         <div className="w-[80%] flex flex-col gap-16">
-          <div className="text-white text-6xl font-semibold">Settings</div>
-          <SettingsNavBar
+          <div className="text-white text-6xl font-semibold">
+            <p>Settings</p>
+          </div>
+          <InfluencersNavbar
             setActivePage={setActivePage}
             activePage={activePage}
           />
@@ -62,4 +63,4 @@ function BrandSettings() {
   }
 }
 
-export default BrandSettings;
+export default InfluencerSettings;
