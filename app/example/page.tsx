@@ -1,7 +1,6 @@
 // @ts-nocheck
 "use client";
 import { FC, FormEventHandler, useState } from "react";
-// 0x77929F1f2a404a6dEB38124E0E0c4d7F5500c595
 import { ethers } from "ethers";
 import {
   Account,
