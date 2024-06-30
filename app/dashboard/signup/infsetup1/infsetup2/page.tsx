@@ -73,13 +73,13 @@ function InfluencerSetup2() {
                         <Link href="/api/auth/signout?callbackUrl=/dashboard/signup/infsetup1/infsetup2">
                           Remove
                         </Link>
-                        <button className="bg-[#00B24F] px-4 py-2 text-white rounded-2xl w-[30%]">
+                        <button className="bg-[#3572EF] px-4 py-2 text-white rounded-2xl w-[30%]">
                           {session.user.username}
                         </button>
                       </>
                     ) : (
                       <Link href="/api/auth/signin?callbackUrl=/dashboard/signup/infsetup1/infsetup2">
-                        <button className="bg-[#00B24F] px-4 py-2 text-white rounded-2xl w-[30%]">
+                        <button className="bg-[#3572EF] px-4 py-2 text-white rounded-2xl w-[30%]">
                           Authorise
                         </button>
                       </Link>
@@ -294,7 +294,7 @@ function InfluencerSetup2() {
               </div>
 
               <button
-                className="bg-[#00B24F] px-4 py-2 text-white rounded-2xl md:rounded-lg w-[30%]"
+                className="bg-[#3572EF] px-4 py-2 text-white rounded-2xl md:rounded-lg w-[30%]"
                 onClick={() => {
                   handleContinue();
                 }}

@@ -80,7 +80,7 @@ function InfluencerSetup3() {
                 />
               </div>
               <button
-                className="bg-[#00B24F] px-4 py-2 text-white rounded-xl w-[30%]"
+                className="bg-[#3572EF] px-4 py-2 text-white rounded-xl w-[30%]"
                 onClick={() => {
                   updateStore();
                   createInfluencer();
