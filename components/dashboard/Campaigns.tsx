@@ -301,11 +301,12 @@ const Campaigns = () => {
     // }
   };
   const handleMintAndApprove = async () => {
-    const res1 = await approveReferSpender();
-    const res2 = await mintReferToken();
-
+    const res1 = await mintReferToken();
     console.log(res1);
-    console.log(res2);
+    if (res1) {
+      const res2 = await approveReferSpender();
+      console.log(res2);
+    }
   };
   const toggleCreate = () => {
     setCreate(!create);

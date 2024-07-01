@@ -267,7 +267,8 @@ const DashHome = () => {
 
               <p className="text-[#909090]">Wallet Address: {walletAddress}</p>
               <p className="text-[#909090]">
-                Matic Balance:
+                
+                ETH Balance:
                 {balance ? Number(balance).toFixed(5) : ""}
               </p>
               <p className="text-[#909090]">
