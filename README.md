@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Referware
 
-## Getting Started
+Referware aligns perfectly with the Commerce track's goals, particularly focusing on Transparent Affiliate System
 
-First, run the development server:
+# Whitepaper
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Read our [Whitepaper](https://og-org.gitbook.io/referware-whitepaper) !
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Transparent Affiliate System
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Referware creates a fully transparent and trustless environment for affiliate marketing:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Deploys campaigns as smart contracts on the Base network**, ensuring immutable and verifiable terms.
+- **Automates tracking of referrals, conversions, and payouts** with blockchain precision.
+- **Eliminates intermediaries**, reducing costs and potential points of failure in the affiliate ecosystem.
+- **Significantly reduces the potential for fraud** through blockchain-based verification.
+- **Ensures fair and timely compensation for influencers** based on verifiable on-chain data, fostering trust.
 
-## Learn More
+This unprecedented level of transparency builds unshakeable trust between brands and influencers, fostering stronger, more productive partnerships and driving more effective campaigns. By leveraging blockchain technology, Referware sets a new standard for accountability and fairness in affiliate marketing.
+ 
+# URL to IRL interaction 
+ 
+# The Problems Referware Solves
 
-To learn more about Next.js, take a look at the following resources:
+### Lack of Transparency in Attribution and Payouts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Traditional affiliate systems operate as black boxes, obscuring attribution and payout processes. Referware's blockchain-based system provides full transparency, allowing real-time verification of referrals and payouts. This fosters trust between brands and influencers, enabling more productive partnerships.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Fraud and Misrepresentation in Influencer Marketing
 
-## Deploy on Vercel
+- The industry faces issues with fake followers and inflated metrics. Referware's smart contract system ensures only genuine, verifiable conversions are rewarded. By connecting social media accounts and tracking actual purchases, it significantly reduces fraud potential.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Inefficient, Manual Processes for Campaign Management
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Managing influencer campaigns often involves time-consuming manual tasks. Referware automates campaign creation, influencer onboarding, and payout processes through smart contracts. This streamlines operations, allowing brands to scale their efforts more effectively.
+
+### Difficulty in Connecting Brands with Suitable Influencers
+
+- Finding the right match can be challenging. Referware's built-in networking and chat functionality creates a marketplace where brands and influencers can easily connect. Its reputation system helps identify high-performing influencers and reliable brands.
+
+### Delayed Payments and Disputes Over Referral Tracking
+
+- Influencers often face payment delays and attribution disagreements. Referware's smart contracts automate payments based on predefined conditions, eliminating delays and disputes. Real-time earnings tracking improves transparency and satisfaction.
+
+# Shopify Integration
+
+- `Initialization`: Initializes the Shopify API.
+- `Fetching Products`: Fetches product data.
+- `Managing Discount Codes`: Creates and manages discount codes.
+- `Fetching Discount Code Usage`: Retrieves usage data for discount codes.
+
+
+
+
+
