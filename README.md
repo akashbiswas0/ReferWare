@@ -18,7 +18,13 @@ Referware creates a fully transparent and trustless environment for affiliate ma
 
 This unprecedented level of transparency builds unshakeable trust between brands and influencers, fostering stronger, more productive partnerships and driving more effective campaigns. By leveraging blockchain technology, Referware sets a new standard for accountability and fairness in affiliate marketing.
  
-# URL to IRL interaction 
+# URL to IRL interaction <>
+### Referware seamlessly bridges the gap between online interactions and real-world commerce:
+
+- Generates unique on-chain referral codes for each influencer, ensuring perfect attribution
+Tracks these codes across various platforms and mediums (social media, blogs, videos, podcasts)
+- Links online engagement directly to in-store or **E-commerce purchases**, providing a complete view of the customer journey
+Enables brands to quantify the impact of digital marketing on both online and offline sales
  
 # The Problems Referware Solves
 
